@@ -26,5 +26,32 @@ public class Task7 {
         demotext.reverse(); //apvercia string
         System.out.println(demotext);
         scanner.close();
-    }
-}
+
+
+        char mostRecurringChar = '\0'; //
+        int maxCount = 0;
+
+        // pereisim per visus simbolius
+        for (int c = 0; c < quote.length(); c++) {
+            char currentChar = quote.charAt(c);
+            int count = 0;
+
+            // surasim dazniausiai pasikartojanti pridedant po + 1 prie kiekvieno simbolio
+            for (int j = 0; j < quote.length(); j++) {
+                if (quote.charAt(j) == currentChar) {
+                    count++;
+                }
+            }
+
+            // istraukiam didziausia kartu pasikartojanti simboli
+            if (count > maxCount) {
+                maxCount = count;
+                mostRecurringChar = currentChar;
+            }
+        }
+
+        // Print the most recurring character
+        System.out.println("Most recurring character: " + mostRecurringChar);
+
+            }
+        }
